@@ -1,0 +1,23 @@
+/* Use for styling; please do not edit variable names */ 
+:root {
+/* Main Colors */
+ --primary-color: #23406a;
+ --secondary-color: #dbe4ef;
+ --accent-color: #cd4d4d;
+  --background-color:#F7F7F5;
+ 
+/* Text Colors */
+ --text-color: #252525;
+ --text-light: #666666;
+ --text-lightest: white;
+ 
+/* Borders & Effects */
+
+  
+/* Typography */
+--font-heading: georgia, 'times new roman', serif;
+--font-body: arial, helvetica, sans-serif;
+
+/* Layout */
+
+}
