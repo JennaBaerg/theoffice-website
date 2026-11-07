@@ -1,9 +1,9 @@
 /* Use for styling; please do not edit variable names */
 :root {
   /* Main Colors */
-  --primary-color: #23406a;
+  --primary-color: #2d5286;
   --secondary-color: #dbe4ef;
-  --accent-color: #cd4d4d;
+  --accent-color: #a23b3b;
   --background-color: #F7F7F5;
 
   /* Text Colors */
@@ -12,11 +12,17 @@
   --text-lightest: white;
 
   /* Borders & Effects */
-
+  --card-border: 1px solid #ddd;
+  --card-border-radius: 6px;
 
   /* Typography */
   --font-heading: georgia, 'times new roman', serif;
   --font-body: arial, helvetica, sans-serif;
+
+  --font-size-subhead: 1.5rem;
+
+  /* Spacing */
+  --spacing-small: 1rem;
 
   /* Layout of Header and Footer*/
   * {
@@ -76,6 +82,76 @@ body {
   color: #000;
   font-weight: 600;
 }
+
+/* ===== MAIN CONTENT ===== */
+
+
+/* About Page Flip Cards */
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-small);
+    justify-content: center;
+    padding: var(--spacing-small);
+
+  }
+
+  .card {
+    width:300px;
+    height: 400px;
+    perspective: 1000px;
+    position: relative;
+  }
+
+  .card__inner {
+    position:relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  .card:hover .card__inner {
+     transform: rotateY(180deg); 
+  }
+
+  .card__front,
+  .card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: var(--card-border);
+    border-radius: var(--card-border-radius);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-small);
+    padding: var(--spacing-small);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .card__back {
+    transform: rotateY(180deg);
+  }
+
+  .card__image {
+    width: 100%;
+    height: 300px;
+    border-radius: var(--card-border-radius);
+    object-fit: cover;
+  }
+
+  .card__header {
+    text-align: center;
+  }
+
+  .card__name {
+    font-size: var(--font-size-subhead);
+  }
+
 
 /* ===== FOOTER ===== */
 .footer {
