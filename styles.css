@@ -152,6 +152,11 @@ body {
     font-size: var(--font-size-subhead);
   }
 
+  .card__title {
+    font-style: italic;
+    font-size: 1.15rem;
+  }
+
 
 /* ===== FOOTER ===== */
 .footer {
