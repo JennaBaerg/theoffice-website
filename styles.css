@@ -86,7 +86,7 @@ body {
 /* ===== MAIN CONTENT ===== */
 
 /*All Page Titles */
-main > h1{
+ h1{
   display: flex;
   position:relative;
   justify-content: center;
@@ -165,7 +165,7 @@ main > h1{
   /* Products Page Information Styles */
 
 
-  .product_title {
+  .product__title {
   display: flex;
   position:relative;
   justify-content: center;
@@ -173,7 +173,7 @@ main > h1{
   margin-bottom: 20px;
   }
 
-.product_info {
+.product__info {
   display: flex;
   position:flex ;
   justify-content: center;
@@ -184,7 +184,7 @@ main > h1{
   box-sizing: border-box;
   }
 
-  .product_info img {
+  .product__info img {
   float: left;
   width: 300px;
   height: auto;
