@@ -85,6 +85,13 @@ body {
 
 /* ===== MAIN CONTENT ===== */
 
+/*All Page Titles */
+ h1{
+  display: flex;
+  position:relative;
+  justify-content: center;
+}
+
 
 /* About Page Flip Cards */
 
@@ -150,6 +157,39 @@ body {
 
   .card__name {
     font-size: var(--font-size-subhead);
+  }
+
+
+
+
+  /* Products Page Information Styles */
+
+
+  .product__title {
+  display: flex;
+  position:relative;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  }
+
+.product__info {
+  display: flex;
+  position:flex ;
+  justify-content: center;
+  line-height: 1.75;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  }
+
+  .product__info img {
+  float: left;
+  width: 300px;
+  height: auto;
+  margin-right: 24px;
+  margin-bottom: 6px;
   }
 
 
