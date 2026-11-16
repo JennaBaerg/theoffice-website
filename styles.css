@@ -2,9 +2,9 @@
 :root {
 
   /* Main Colors */
-  --primary-color: #23406a;
+  --primary-color: #2d5286;
   --secondary-color: #dbe4ef;
-  --accent-color: #cd4d4d;
+  --accent-color: #a23b3b;
   --background-color: #F7F7F5;
 
   /* Text Colors */
@@ -12,17 +12,27 @@
   --text-light: #666666;
   --text-lightest: white;
 
+  /* Borders & Effects */
+  --card-border: 1px solid #ddd;
+  --card-border-radius: 6px;
+
   /* Typography */
   --font-heading: georgia, 'times new roman', serif;
   --font-body: arial, helvetica, sans-serif;
 
+  --font-size-subhead: 1.5rem;
+
+  /* Spacing */
+  --spacing-small: 1rem;
+
   /* Layout of Header and Footer*/
-  * {
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-}
 
 body {
   margin: 0;
@@ -372,6 +382,496 @@ ol.chili__list {
 }
 
 /* ===== Footer ===== */
+/* ===== MAIN CONTENT ===== */
+
+/*All Page Titles */
+ h1{
+  display: flex;
+  position:relative;
+  justify-content: center;
+}
+
+
+/* About Page Flip Cards */
+
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-small);
+    justify-content: center;
+    padding: var(--spacing-small);
+
+  }
+
+  .card {
+    width:300px;
+    height: 400px;
+    perspective: 1000px;
+    position: relative;
+  }
+
+  .card__inner {
+    position:relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+  }
+  .card:hover .card__inner {
+     transform: rotateY(180deg); 
+  }
+
+  .card__front,
+  .card__back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: var(--card-border);
+    border-radius: var(--card-border-radius);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-small);
+    padding: var(--spacing-small);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  .card__back {
+    transform: rotateY(180deg);
+  }
+
+  .card__image {
+    width: 100%;
+    height: 300px;
+    border-radius: var(--card-border-radius);
+    object-fit: cover;
+  }
+
+  .card__header {
+    text-align: center;
+  }
+
+  .card__name {
+    font-size: var(--font-size-subhead);
+  }
+
+
+
+
+  /* Products Page Information Styles */
+
+
+  .product__title {
+  display: flex;
+  position:relative;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  }
+
+.product__info {
+  display: flex;
+  position:flex ;
+  justify-content: center;
+  line-height: 1.75;
+
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  }
+
+  .product__info img {
+  float: left;
+  width: 300px;
+  height: auto;
+  margin-right: 24px;
+  margin-bottom: 6px;
+  }
+
+
+/* =================================
+   HOMEPAGE - DUNDER MIFFLIN
+
+/* ===== WELCOME SECTION ===== */
+
+.welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 3rem;
+  background-color: #ffffff;
+  border: var(--card-border);
+  border-radius: var(--card-border-radius);
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+.welcome__content {
+  flex: 1;
+}
+
+.welcome__eyebrow {
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+}
+
+.welcome__title {
+  display: block;
+  position: static;
+  text-align: left;
+  font-family: var(--font-heading);
+  font-size: 2.8rem;
+  line-height: 1.2;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.welcome__subtitle {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+.welcome__message {
+  font-family: var(--font-body);
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.welcome__quote {
+  margin-top: 1.25rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--accent-color);
+}
+
+.welcome__signature {
+  margin-top: 0.75rem;
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.welcome__image {
+  flex: 1;
+  max-width: 480px;
+}
+
+.welcome__image img {
+  display: block;
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border: var(--card-border);
+  border-radius: var(--card-border-radius);
+}
+
+
+/* ===== ACCIDENT COUNTER ===== */
+
+.accident {
+  padding: 3.5rem 1.5rem;
+  text-align: center;
+  background-color: var(--secondary-color);
+  border-top: 1px solid #cbd5e1;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.accident__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.accident__eyebrow {
+  color: var(--primary-color);
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.accident__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin: 1rem 0 1.5rem;
+}
+
+.accident__sign {
+  max-width: 520px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border: 4px solid #333333;
+  border-top: 10px solid var(--primary-color);
+  border-radius: 4px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+  animation: sign-entrance 1s ease-out;
+}
+
+.accident__sign-heading {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--text-color);
+}
+
+.accident__number {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 6rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: var(--accent-color);
+}
+
+.accident__sign-footer {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.accident__caption {
+  margin-top: 1.25rem;
+  font-family: var(--font-heading);
+  font-style: italic;
+  color: var(--text-light);
+}
+
+
+/* ===== MEET THE SCRANTON TEAM ===== */
+
+.team {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background-color: #ffffff;
+  border: var(--card-border);
+  border-radius: var(--card-border-radius);
+}
+
+.team__content {
+  flex: 1;
+}
+
+.team__eyebrow {
+  color: var(--accent-color);
+  font-size: 0.85rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.75rem;
+}
+
+.team__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.team__text {
+  line-height: 1.8;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.team__button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border-radius: var(--card-border-radius);
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease,
+              transform 0.3s ease;
+}
+
+.team__button:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
+
+.team__image {
+  flex: 1;
+  max-width: 450px;
+}
+
+.team__image img {
+  display: block;
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--card-border-radius);
+  border: var(--card-border);
+}
+
+
+/* ===== EXPLORE THE OFFICE ===== */
+
+.explore {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.explore__title {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.explore__text {
+  max-width: 650px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.explore__links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.explore__button {
+  display: inline-block;
+  min-width: 190px;
+  padding: 1rem 1.5rem;
+  background-color: #ffffff;
+  color: var(--primary-color);
+  border: 1px solid #cbd5e1;
+  border-bottom: 3px solid var(--primary-color);
+  border-radius: var(--card-border-radius);
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              transform 0.3s ease;
+}
+
+.explore__button:hover {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+
+/* ===== CSS ANIMATION ===== */
+
+@keyframes sign-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ===== TABLET RESPONSIVE DESIGN ===== */
+
+@media screen and (max-width: 768px) {
+
+  .welcome,
+  .team {
+    flex-direction: column;
+    margin: 1.5rem;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .welcome__content,
+  .welcome__image,
+  .team__content,
+  .team__image {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .welcome__title {
+    font-size: 2.2rem;
+  }
+
+  .welcome__image img,
+  .team__image img {
+    height: auto;
+    max-height: 350px;
+  }
+
+  .accident {
+    padding: 2.5rem 1rem;
+  }
+
+  .accident__sign {
+    padding: 1.5rem 1rem;
+  }
+
+  .accident__number {
+    font-size: 4.5rem;
+  }
+
+  .explore {
+    padding: 2rem 1rem;
+  }
+
+  .explore__links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .explore__button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+
+/* ===== SMALL PHONE RESPONSIVE DESIGN ===== */
+
+@media screen and (max-width: 480px) {
+
+  .welcome__title {
+    font-size: 1.8rem;
+  }
+
+  .welcome__subtitle {
+    font-size: 1.2rem;
+  }
+
+  .accident__number {
+    font-size: 3.8rem;
+  }
+
+  .accident__sign-heading {
+    font-size: 0.9rem;
+  }
+
+  .team__title,
+  .explore__title {
+    font-size: 1.6rem;
+  }
+}
+
+
+/* ===== FOOTER ===== */
 .footer {
   background-color: #1a1a1a;
   color: #e0e0e0;
