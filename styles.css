@@ -99,7 +99,7 @@ body {
 
   .card {
     width:330px;
-    height: 430px;
+    height: 440px;
     perspective: 1000px;
     position: relative;
   }
@@ -108,7 +108,7 @@ body {
     position:relative;
     width: 100%;
     height: 100%;
-    transition: transform 1s;
+    transition: transform 1.5s ease;
     transform-style: preserve-3d;
   }
   .card:hover .card__inner {
@@ -154,7 +154,9 @@ body {
 
   .card__title {
     font-style: italic;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
+    line-height: 1.3rem;
+    margin-top: 2px;
   }
 
 
