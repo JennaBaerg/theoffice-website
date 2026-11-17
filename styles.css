@@ -86,7 +86,41 @@ body {
 /* ===== MAIN CONTENT ===== */
 
 
-/* About Page Flip Cards */
+/* == ABOUT PAGE == */
+
+/* Flip Cards Button */
+
+  .flip-button {
+    display: block;
+    background-color: var(--primary-color);
+    width: fit-content;
+    color: var(--text-lightest);
+    font-weight: bold;
+    padding: var(--spacing-small);
+    border-radius: var(--card-border-radius);
+    cursor: pointer;
+    user-select: none;
+    margin: 25px auto;
+  }
+
+  .flip-button__checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+  
+flip-button:has(.flip-button__checkbox:focus-visible) {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+.card:hover .card__inner,
+.about:has(.flip-button__checkbox:checked) .card__inner {
+  transform: rotateY(180deg);
+}
+
+/* Character Cards */
 
   .card-container {
     display: flex;
@@ -108,9 +142,10 @@ body {
     position:relative;
     width: 100%;
     height: 100%;
-    transition: transform 1.5s ease;
+    transition: transform 1.4s ease;
     transform-style: preserve-3d;
   }
+
   .card:hover .card__inner {
      transform: rotateY(180deg); 
   }

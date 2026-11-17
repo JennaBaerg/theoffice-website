@@ -11,4 +11,4 @@ All copyrighted material, trademarks, characters, and other intellectual propert
 ## Credits & Attributions
 
 ### About Page ('/about.html')
-All photographic assets on this page were sourced from: https://theoffice.fandom.com/wiki/
+All photographic assets on the "about" page were sourced from: https://theoffice.fandom.com/wiki/
