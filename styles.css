@@ -1,5 +1,6 @@
 /* Use for styling; Add to as needed */
 :root {
+
   /* Main Colors */
   --primary-color: #2d5286;
   --secondary-color: #dbe4ef;
@@ -46,37 +47,71 @@
   }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.5;
-  color: #1a1a1a;
-  background-color: #f8f8f8;
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-color);
+  background: #fafafa;
+  line-height: 1.6;
 }
 
-/* ===== HEADER ===== */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Header & Navigation ===== */
 .header {
   padding: 1rem 0;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
+.nav__logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav__logo img {
+  display: block;
+  height: 100px;
+  width: auto;
+}
 
 .nav__links {
   display: flex;
-  gap: 2.5rem;
+  gap: 1.5rem;
 }
 
 .nav__link {
   text-decoration: none;
   color: #111;
   font-weight: 500;
-  font-size: 1rem;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
   transition: opacity 0.2s ease;
 }
 
@@ -84,18 +119,281 @@ body {
   opacity: 0.7;
 }
 
-.nav__logo img {
-  height: 96px;
-  width: auto;
+.nav__link--active {
+  color: var(--primary-color);
+  border-bottom-color: var(--accent-color);
+}
+
+/* ===== Main content ===== */
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section {
+  margin: 0;
+}
+
+.section__title {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  border-bottom: 3px solid var(--accent-color);
+  display: inline-block;
+  padding-bottom: 0.15rem;
+}
+
+.section__intro {
+  color: var(--text-light);
+  margin-bottom: 1.25rem;
+}
+
+/* ===== Card ===== */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 1.75rem;
+}
+
+/* ===== Images ===== */
+.card__image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Chili ===== */
+.chili__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.chili__ingredients,
+.chili__directions {
+  flex: 1 1 260px;
+}
+
+.chili__ingredients h3,
+.chili__directions h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.75rem;
+}
+
+.chili__list {
+  list-style: none;
+}
+
+.chili__list-item {
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.chili__list-item:last-child {
+  border-bottom: none;
+}
+
+ol.chili__list {
+  list-style: decimal;
+  padding-left: 1.25rem;
+}
+
+.chili__note {
+  background: var(--secondary-color);
+  border-left: 4px solid var(--primary-color);
+  padding: 0.9rem 1rem;
+  margin-top: 1.5rem;
+  font-style: italic;
+}
+
+/* ===== Dundies Generator ===== */
+.dundies__form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.dundies__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.dundies__label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.dundies__input {
+  padding: 0.55rem 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  min-width: 220px;
+}
+
+.dundies__input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.dundies__button {
+  background: var(--accent-color);
+  color: var(--text-lightest);
+  border: none;
+  padding: 0.65rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dundies__button:hover {
+  background: #b53e3e;
+  transform: scale(1.03);
+}
+
+.dundies__result {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  padding: 1.25rem;
+  background: var(--secondary-color);
+  border-radius: 8px;
+  border: 2px dashed var(--primary-color);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.dundies__result--visible {
+  opacity: 1;
+}
+
+.dundies__award-name {
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* ===== Fun Run Form ===== */
+.funrun__layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.funrun__image {
+  flex: 1 1 260px;
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.funrun__form {
+  flex: 1 1 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 560px;
+}
+
+.funrun__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.funrun__field {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.funrun__label {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.funrun__input,
+.funrun__select,
+.funrun__textarea {
+  width: 100%;
+  padding: 0.55rem 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+  background: #fff;
+}
+
+.funrun__input:focus,
+.funrun__select:focus,
+.funrun__textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+.funrun__textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.funrun__submit {
+  background: var(--primary-color);
+  color: var(--text-lightest);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background 0.2s ease;
+}
+
+.funrun__submit:hover {
+  background: #1a3254;
+}
+
+.funrun__message {
+  display: none;
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  background: #e6f4ea;
+  color: #1e4620;
+  border: 1px solid #a8d5b5;
+}
+
+.funrun__message--visible {
   display: block;
 }
 
-/* Active page indicator */
-.nav__link--active {
-  color: #000;
-  font-weight: 600;
-}
-
+/* ===== Footer ===== */
 /* ===== MAIN CONTENT ===== */
 
 /* All Page Titles */
@@ -357,7 +655,6 @@ body {
 
 /* =================================
    HOMEPAGE - DUNDER MIFFLIN
-================================= */
 
 /* ===== WELCOME SECTION ===== */
 
@@ -739,8 +1036,8 @@ body {
 .footer {
   background-color: #1a1a1a;
   color: #e0e0e0;
-  padding: 3rem 1.5rem 2rem;
-  margin-top: 4rem;
+  padding: 3rem 1.5rem 1.25rem;
+  margin-top: 2rem;
 }
 
 .footer__content {
@@ -749,37 +1046,41 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 2rem;
   flex-wrap: wrap;
+  gap: 1.5rem;
 }
 
 .footer__brand {
-  font-size: 1.25rem;
+  font-family: var(--font-body);
+  font-size: 1.35rem;
   font-weight: 700;
   color: #fff;
   margin-bottom: 0.5rem;
 }
 
 .footer__text {
-  font-size: 0.9rem;
+  max-width: 270px;
+  font-size: 0.95rem;
+  line-height: 1.5;
   color: #aaa;
-  max-width: 280px;
 }
 
 .footer__links {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 0.25rem;
 }
 
 .footer__links a {
-  color: #ccc;
+  color: #ddd;
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
+  font-size: 0.95rem;
 }
 
 .footer__links a:hover {
   color: #fff;
+  text-decoration: underline;
 }
 
 .footer__bottom {
@@ -787,7 +1088,86 @@ body {
   margin: 2.5rem auto 0;
   padding-top: 1.5rem;
   border-top: 1px solid #333;
-  font-size: 0.85rem;
-  color: #888;
+  font-size: 0.9rem;
+  color: #999;
   text-align: center;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav__links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .chili__grid {
+    flex-direction: column;
+  }
+
+  .dundies__form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dundies__input {
+    min-width: 100%;
+  }
+
+  .funrun__row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .funrun__form {
+    gap: 0.85rem;
+  }
+
+  .funrun__row {
+    gap: 0.85rem;
+  }
+
+  /* Stacked: size to content instead of using 200px as a height */
+  .funrun__row .funrun__field {
+    flex: 0 0 auto;
+  }
+
+  .footer__content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer__links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  .section__title {
+    font-size: 1.35rem;
+  }
+}
+
+/* Fun Run: keep stacked fields sized to their content (must stay last) */
+@media (max-width: 768px) {
+
+  .funrun__form>.funrun__field,
+  .funrun__row>.funrun__field {
+    flex: 0 0 auto;
+    height: auto;
+  }
 }
