@@ -1,4 +1,4 @@
-/* Use for styling; please do not edit variable names */
+/* Use for styling; Add to as needed */
 :root {
   /* Main Colors */
   --primary-color: #2d5286;
@@ -8,7 +8,7 @@
 
   /* Text Colors */
   --text-color: #252525;
-  --text-light: #666666;
+  --text-light: #636363;
   --text-lightest: white;
 
   /* Borders & Effects */
@@ -19,10 +19,22 @@
   --font-heading: georgia, 'times new roman', serif;
   --font-body: arial, helvetica, sans-serif;
 
-  --font-size-subhead: 1.5rem;
+  --font-size-title: 2.4rem;
+  --font-size-heading: 2rem;
+  --font-size-subhead: 1.4rem;
 
-  /* Spacing */
+  --line-height-body: 1.8rem;
+
+  /* Spacing, Margin, and Padding */
   --spacing-small: 1rem;
+  --spacing-medium: 1.5rem;
+
+  --button-padding: 0.8rem 1.5rem;
+
+  --margin-small: 0.5rem;
+  --margin-medium: 1.5rem;
+  --margin-large: 2rem;
+  --margin-xl: 3rem;
 
   /* Layout of Header and Footer*/
 }
@@ -86,6 +98,43 @@ body {
 
 /* ===== MAIN CONTENT ===== */
 
+/* All Page Titles */
+
+ h1 {
+  display: flex;
+  flex-direction: column;
+  position:relative;
+  align-items: center;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: var(--font-size-title);
+}
+
+/* =================================
+          ABOUT PAGE
+
+/* Flip All Button */
+
+  .flip-button {
+    display: block;
+    position: relative;
+    background-color: var(--primary-color);
+    width: fit-content;
+    color: var(--text-lightest);
+    font-weight: bold;
+    text-decoration: none;
+    padding: var(--button-padding);
+    border-radius: var(--card-border-radius);
+    cursor: pointer;
+    user-select: none;
+    margin: var(--margin-medium) auto;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .flip-button:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
 /*All Page Titles */
  h1{
   display: flex;
@@ -94,37 +143,76 @@ body {
 }
 
 
-/* About Page Flip Cards */
+.flip-button:has(.flip-button__checkbox:checked) {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
 
-  .card-container {
+  .flip-button__checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+  
+.flip-button:has(.flip-button__checkbox:focus-visible) {
+  outline: 3px solid currentColor;
+  outline-offset: 3px;
+}
+
+.about-card:hover .about-card__inner,
+.about:has(.flip-button__checkbox:checked) .about-card__inner {
+  transform: rotateY(180deg);
+}
+
+/* About Cards */
+
+.about__subtitle {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  font-size: var(--font-size-subhead);
+  font-style: italic;
+  font-family: var(--font-heading);
+  margin-top: var(--margin-small);
+  color: var(--text-light);
+}
+
+.about-card__header {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+  .about-card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-small);
+    gap: var(--spacing-medium);
     justify-content: center;
-    padding: var(--spacing-small);
+    background-color: var(--secondary-color);
+    padding: var(--spacing-medium);
 
   }
 
-  .card {
-    width:300px;
-    height: 400px;
+  .about-card {
+    width: 330px;
+    height: 450px;
     perspective: 1000px;
     position: relative;
   }
 
-  .card__inner {
+  .about-card__inner {
     position:relative;
     width: 100%;
     height: 100%;
-    transition: transform 1s;
+    transition: transform 1.4s ease;
     transform-style: preserve-3d;
   }
-  .card:hover .card__inner {
-     transform: rotateY(180deg); 
-  }
 
-  .card__front,
-  .card__back {
+  .about-card__front,
+  .about-card__back {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -141,23 +229,96 @@ body {
     -webkit-backface-visibility: hidden;
   }
 
-  .card__back {
+  .about-card__back {
     transform: rotateY(180deg);
   }
 
-  .card__image {
+  .about-card__back .about-card__name {
+    color: var(--accent-color);
+  }
+
+  .about-card__image {
     width: 100%;
     height: 300px;
     border-radius: var(--card-border-radius);
     object-fit: cover;
   }
 
-  .card__header {
-    text-align: center;
+  .about-card__name {
+    font-size: var(--font-size-subhead);
+    color: var(--primary-color);
+    font-family: var(--font-body);
   }
 
-  .card__name {
-    font-size: var(--font-size-subhead);
+  .about-card__title {
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    min-height: 2.4em;
+    margin-top: var(--margin-small);
+    color: var(--text-light);
+  }
+
+  /* Our Story */
+
+  .about-story {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--spacing-medium);
+    box-sizing: border-box;
+    max-width: 1045px;
+    margin: var(--margin-medium) auto; 
+    padding: var(--spacing-medium);
+    background-color: white;
+    border-radius: var(--card-border-radius);
+  }
+
+  .about-story__content {
+    flex: 1 1 425px; 
+  }
+
+  .about-story__image {
+    flex: 1 1 300px;
+    min-width: 0;
+    max-width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: var(--card-border-radius);
+  }
+
+  .about-story__heading {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-heading);
+    margin-bottom: var(--spacing-small);
+    color: var(--primary-color);
+  }
+
+  .about-story__text {
+    font-family: var(--font-body);
+    color: var(--text-light);
+    line-height: var(--line-height-body);
+  }
+
+  .about-story__tagline {
+    font-weight: bold;
+    font-style: italic;
+    padding: var(--spacing-small) 0px;
+    color: var(--primary-color);
+    border-left: 3px solid var(--accent-color);
+    padding-left: var(--spacing-small);
+    margin-top: var(--spacing-medium);
+  }
+
+  @media (max-width: 768px) {
+    .about-story {
+      flex-direction: column;
+      margin: var(--spacing-medium);
+    }
+    .about-story__text {
+      max-width: 600px;
+    }
   }
 
 
