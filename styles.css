@@ -21,6 +21,7 @@
   --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
   --font-size-title: 2.4rem;
+  --font-size-title-smaller: 1.7rem;
   --font-size-heading: 2rem;
   --font-size-subhead: 1.4rem;
 
@@ -393,70 +394,78 @@ ol.chili__list {
   display: block;
 }
 
-/* ===== Footer ===== */
 /* ===== MAIN CONTENT ===== */
 
 /* All Page Titles */
 
  h1 {
-  display: flex;
-  flex-direction: column;
-  position:relative;
-  align-items: center;
+  width: fit-content;
+  margin: 0 auto 0.5rem;
   text-align: center;
   font-family: var(--font-heading);
   font-size: var(--font-size-title);
-}
-
-/* =================================
-          ABOUT PAGE
-
-/* Flip All Button */
-
-  .flip-button {
-    display: block;
-    position: relative;
-    background-color: var(--primary-color);
-    width: fit-content;
-    color: var(--text-lightest);
-    font-weight: bold;
-    text-decoration: none;
-    padding: var(--button-padding);
-    border-radius: var(--card-border-radius);
-    cursor: pointer;
-    user-select: none;
-    margin: var(--margin-medium) auto;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-
-  .flip-button:hover {
-  background-color: var(--accent-color);
-  transform: translateY(-3px);
-}
-/*All Page Titles */
- h1{
-  display: flex;
-  position:relative;
-  justify-content: center;
   color: var(--primary-color);
+  padding: 0 1rem;
+}
+
+/* Red Underline */
+
+h1::after {
+  content: "";
+  display: block;
+  width: 98%;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin-top: 0.15rem;
 }
 
 h2{
   color: var(--primary-color);
 }
 
+/* =================================
+          ABOUT PAGE
+ ================================== */
+
+ .about {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+ }
+
+/* Flip All Button */
+
+.flip-button {
+  display: block;
+  position: relative;
+  background-color: var(--primary-color);
+  width: fit-content;
+  color: var(--text-lightest);
+  font-weight: bold;
+  text-decoration: none;
+  padding: var(--button-padding);
+  border-radius: var(--card-border-radius);
+  cursor: pointer;
+  user-select: none;
+  margin: var(--margin-medium) auto;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+  .flip-button:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+}
 
 .flip-button:has(.flip-button__checkbox:checked) {
   background-color: var(--accent-color);
   transform: translateY(-3px);
 }
 
-  .flip-button__checkbox {
-    position: absolute;
-    opacity: 0;
-    width: 1px;
-    height: 1px;
-  }
+.flip-button__checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
   
 .flip-button:has(.flip-button__checkbox:focus-visible) {
   outline: 3px solid currentColor;
@@ -489,48 +498,49 @@ h2{
   text-align: center;
 }
 
-  .about-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-medium);
-    justify-content: center;
-    background-color: var(--secondary-color);
-    padding: var(--spacing-medium);
+.about-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-medium);
+  justify-content: center;
+  background-color: var(--secondary-color);
+  padding: 3rem;
+  border-radius: var(--card-border-radius);
 
   }
 
-  .about-card {
-    width: 330px;
-    height: 450px;
-    perspective: 1000px;
-    position: relative;
-  }
+.about-card {
+  width: 330px;
+  height: 450px;
+  perspective: 1000px;
+  position: relative;
+}
 
-  .about-card__inner {
-    position:relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 1.4s ease;
-    transform-style: preserve-3d;
-  }
+.about-card__inner {
+  position:relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.4s ease;
+  transform-style: preserve-3d;
+}
 
-  .about-card__front,
-  .about-card__back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    border: var(--card-border);
-    border-radius: var(--card-border-radius);
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: var(--spacing-small);
-    padding: var(--spacing-small);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-  }
+.about-card__front,
+.about-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  border: var(--card-border);
+  border-radius: var(--card-border-radius);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-small);
+  padding: var(--spacing-small);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
 
   .about-card__back {
     transform: rotateY(180deg);
@@ -614,18 +624,70 @@ h2{
     margin-top: var(--spacing-medium);
   }
 
-  @media (max-width: 768px) {
-    .about-story {
-      flex-direction: column;
-      margin: var(--spacing-medium);
-    }
-    .about-story__text {
-      max-width: 600px;
-    }
+  /* About Tablet Responsive */
+
+@media (max-width: 768px) {
+  .about-story {
+    flex-direction: column;
+    margin: var(--spacing-medium);
   }
 
+  .about-story__content {
+    flex: 0 0 auto;
+  }
+  .about-story__text {
+    max-width: 600px;
+  }
 
+  .about-story__image {
+    flex: 0 0 auto;
+    max-width: 500px;
+    height: auto;
+    aspect-ratio: 16/9;
+  }
 
+  .about__subtitle {
+    font-size: 16px;
+      
+  }
+
+  }
+
+  /* About Phone Responsive */
+
+@media screen and (max-width: 480px) {
+
+  .about__title {
+    margin: 0 auto;
+  }
+
+  .about__subtitle {
+    padding: 0 65px;
+  }
+  
+  .about-card-container {
+    padding: var(--spacing-medium);
+  }
+
+  .about-story {
+    margin: var(--spacing-small) 0;
+    padding: var(--spacing-small);
+    gap: 1.5rem;
+  }
+
+  .about-story__text {
+    max-width: none;
+  }
+
+  .about-story__image {
+    width: 100%;
+  }
+
+  .about-card {
+    width: 100%;
+    max-width: 330px;
+  }
+ }
 
   /* Products Page Information Styles */
 
@@ -742,6 +804,16 @@ h2{
   line-height: 1.2;
   color: var(--primary-color);
   margin-bottom: 1rem;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* Red Underline */
+
+.welcome__title::after {
+  width: 230px;
+  margin: 0.15rem 0 0;
 }
 
 .welcome__subtitle {
@@ -1020,6 +1092,10 @@ h2{
     font-size: 2.2rem;
   }
 
+  .welcome__title::after {
+    width: 100%;
+  }
+
   .welcome__image img,
   .team__image img {
     height: auto;
@@ -1144,6 +1220,12 @@ h2{
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+
+  h1 {
+    font-size: var(--font-size-title-smaller);
+  }
+  
+  
   .nav {
     flex-direction: column;
     text-align: center;
