@@ -706,7 +706,7 @@ h2{
    box-sizing: border-box;
 
    max-width: 1300px;
-   margin: 40px auto 100px;
+   margin: 40px auto 50px;
    border-radius: 8px;
    padding: 40px;
   }
@@ -721,8 +721,8 @@ h2{
 
   .product__info p {
     line-height: 1.75;
-    margin-bottom: 180px;
-    margin-top: 100px;
+    margin-bottom: 120px;
+    margin-top: 80px;
 
   }
 
@@ -1158,8 +1158,8 @@ h2{
   /* Products  Smart Phone */
 
   .product__title {
-  margin-bottom: -10px;
-  
+  margin-bottom: -60px;
+
   }
 
   .products {
