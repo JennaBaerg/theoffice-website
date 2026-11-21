@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakroom | The Office</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav">
+            <a href="index.html" class="nav__logo">
+                <img src="the-office-tv-show-sign-logo-png_seeklogo-438510.png" alt="The Office">
+            </a>
+            <div class="nav__links">
+                <a class="nav__link" href="index.html">Home</a>
+                <a class="nav__link" href="about.html">About</a>
+                <a class="nav__link" href="products.html">Products</a>
+                <a class="nav__link nav__link--active" href="breakroom.html">Breakroom</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!-- Kevin's Chili Recipe -->
+        <section id="chili" class="section">
+            <h2 class="section__title">Kevin's Famous Chili</h2>
+            <p class="section__intro">
+                The legendary recipe from Kevin Malone.
+            </p>
+
+            <article class="card">
+                <img class="card__image" src="chili.jpg" alt="The famous chili spilled across the office floor">
+                <div class="chili__grid">
+                    <div class="chili__ingredients">
+                        <h3>Ingredients</h3>
+                        <ul class="chili__list">
+                            <li class="chili__list-item">4 dried ancho chiles</li>
+                            <li class="chili__list-item">2 Tbsp oil</li>
+                            <li class="chili__list-item">3 lbs ground beef</li>
+                            <li class="chili__list-item">2 yellow onions, chopped</li>
+                            <li class="chili__list-item">6 cloves garlic</li>
+                            <li class="chili__list-item">1 jalapeño, chopped</li>
+                            <li class="chili__list-item">1 Tbsp oregano</li>
+                            <li class="chili__list-item">2 tsp cumin</li>
+                            <li class="chili__list-item">2 (12-oz) bottles of beer</li>
+                            <li class="chili__list-item">3 cans beans, drained</li>
+                            <li class="chili__list-item">3 cups beef stock</li>
+                            <li class="chili__list-item">Chopped tomatoes &amp; salt</li>
+                        </ul>
+                    </div>
+                    <div class="chili__directions">
+                        <h3>Directions</h3>
+                        <ol class="chili__list">
+                            <li class="chili__list-item">Toast and soak the ancho chiles, then blend into a paste.</li>
+                            <li class="chili__list-item">Brown the ground beef and set aside.</li>
+                            <li class="chili__list-item">Cook the onions (undercook them!), jalapeño, and garlic.</li>
+                            <li class="chili__list-item">Add spices, beer, chile paste, beans, stock, tomatoes, and
+                                beef.</li>
+                            <li class="chili__list-item">Simmer for 1.5–2 hours. Serve with cheese and sour cream.</li>
+                            <li class="chili__list-item">Try not to drop the pot.</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <p class="chili__note">Remember: undercook the onions.</p>
+            </article>
+        </section>
+
+        <!-- Dundies Award Generator -->
+        <section id="dundies" class="section">
+            <h2 class="section__title">Dundies Award Generator</h2>
+            <p class="section__intro">
+                Enter a name (or leave blank) and generate a Dundie Award.
+            </p>
+
+            <div class="card">
+                <form class="dundies__form" id="dundies-form">
+                    <div class="dundies__field">
+                        <label for="recipient-name" class="dundies__label">Recipient Name</label>
+                        <input type="text" id="recipient-name" class="dundies__input" placeholder="e.g. Pam Beesly">
+                    </div>
+                    <button type="submit" class="dundies__button">Generate Dundie</button>
+                </form>
+
+                <div class="dundies__result" id="dundies-result" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <!-- Fun Run Signup -->
+        <section id="funrun" class="section">
+            <h2 class="section__title">Fun Run Signup</h2>
+            <p class="section__intro">
+                Sign up for the Meredith Palmer Memorial Rabies Awareness Fun Run!
+            </p>
+
+            <div class="card">
+                <div class="funrun__layout">
+                    <form class="funrun__form" id="funrun-form">
+                        <div class="funrun__row">
+                            <div class="funrun__field">
+                                <label for="full-name" class="funrun__label">Full Name</label>
+                                <input type="text" id="full-name" class="funrun__input" required
+                                    placeholder="Michael Scott">
+                            </div>
+                            <div class="funrun__field">
+                                <label for="email" class="funrun__label">Email</label>
+                                <input type="email" id="email" class="funrun__input" required
+                                    placeholder="mscott@dundermifflin.com">
+                            </div>
+                        </div>
+
+                        <div class="funrun__row">
+                            <div class="funrun__field">
+                                <label for="distance" class="funrun__label">Distance</label>
+                                <select id="distance" class="funrun__select" required>
+                                    <option value="">Select distance</option>
+                                    <option value="1mile">1-Mile Walk</option>
+                                    <option value="5k">5K Fun Run</option>
+                                    <option value="virtual">Virtual</option>
+                                </select>
+                            </div>
+                            <div class="funrun__field">
+                                <label for="tshirt" class="funrun__label">T-Shirt Size</label>
+                                <select id="tshirt" class="funrun__select" required>
+                                    <option value="">Select size</option>
+                                    <option value="S">Small</option>
+                                    <option value="M">Medium</option>
+                                    <option value="L">Large</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="funrun__field">
+                            <label for="notes" class="funrun__label">Notes (optional)</label>
+                            <textarea id="notes" class="funrun__textarea"
+                                placeholder="Anything we should know?"></textarea>
+                        </div>
+
+                        <button type="submit" class="funrun__submit">Sign Up</button>
+                        <div class="funrun__message" id="funrun-message" role="status"></div>
+                    </form>
+                    <img class="funrun__image" src="funrun.jpg"
+                        alt="Blue Fun Run t-shirt with a Rabies Awareness Fun Run race bib">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__content">
+            <div>
+                <div class="footer__brand">The Office</div>
+                <p class="footer__text">Your workplace essentials, thoughtfully designed.</p>
+            </div>
+            <div class="footer__links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="products.html">Products</a>
+                <a href="breakroom.html">Breakroom</a>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            © 2026 Dunder Mifflin Paper Company. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const awards = [
+            "Whitest Sneakers Award",
+            "Hottest in the Office",
+            "Most Dedicated Worker",
+            "Best Desk Snack Curator",
+            "Spicy Curry Award",
+            "Fine Work Award",
+            "Best Dad Award",
+            "Best Mom Award",
+            "Promising Assistant Manager",
+            "Moving On Up Award",
+            "World's Best Boss",
+            "Best Prankster",
+            "Most Enthusiastic about Beets",
+            "Party Planning Committee MVP"
+        ];
+
+        const characters = [
+            "Michael Scott", "Jim Halpert", "Pam Beesly", "Dwight Schrute",
+            "Angela Martin", "Kevin Malone", "Stanley Hudson", "Phyllis Vance",
+            "Meredith Palmer", "Oscar Martinez", "Kelly Kapoor", "Ryan Howard"
+        ];
+
+        // Dundies form
+        document.getElementById("dundies-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("recipient-name").value.trim();
+            if (!name) {
+                name = characters[Math.floor(Math.random() * characters.length)];
+            }
+
+            const award = awards[Math.floor(Math.random() * awards.length)];
+            const result = document.getElementById("dundies-result");
+
+            result.innerHTML = `
+                <div style="font-size: 2rem;">🏆</div>
+                <div class="dundies__award-name">${award}</div>
+                <div>Presented to <strong>${name}</strong></div>
+            `;
+
+            result.classList.remove("dundies__result--visible");
+            void result.offsetWidth;
+            result.classList.add("dundies__result--visible");
+        });
+
+        // Fun Run form
+        document.getElementById("funrun-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById("full-name").value.trim();
+            const message = document.getElementById("funrun-message");
+
+            message.textContent = "You're signed up, " + name + "! See you at the Fun Run.";
+            message.classList.add("funrun__message--visible");
+
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
