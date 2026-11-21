@@ -1154,6 +1154,22 @@ h2{
   .explore__title {
     font-size: 1.6rem;
   }
+
+  /* Products  Smart Phone */
+
+  .product__title {
+  margin-bottom: -10px;
+  
+  }
+
+  .products {
+   box-shadow: 4px 4px 5px var(--gray);
+
+   max-width: 500px;
+   margin: 40px auto 40px;
+   border-radius: 8px;
+   padding: 20px;
+  }
 }
 
 
